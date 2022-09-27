@@ -64,7 +64,7 @@ cmd [[packadd packer.nvim]]
 	use { 'airblade/vim-gitgutter', } --                     <- A good indicator for whats new and what hasn't been commited yet.
 --  use { 'tpope/vim-fugitive',} --                          <- git intigration for vim inert until I stop using NeoGit
 	use { 'w0rp/ale', } --                                   <- Indicates where the issues in your code are with a red >> 
-   use { 'famiu/bufdelete.nvim'} --                         <- Says it helps retain the layout after a buffer is deleted but I haven't gotted aroud to using it
+    use { 'famiu/bufdelete.nvim'} --                         <- Says it helps retain the layout after a buffer is deleted but I haven't gotted aroud to using it
     use { 'ms-jpq/coq_nvim', branch = 'coq'} --              <- Code completion and code snippets, makes life just a little better when coding 
     use { 'ms-jpq/coq.artifacts', branch = 'artifacts' } --  <- The snippets that COQ uses 
     use { 'ms-jpq/coq.thirdparty', branch = '3p'} --         <- Third party snippets for COQ
@@ -75,11 +75,10 @@ cmd [[packadd packer.nvim]]
     use { 'nvim-lua/plenary.nvim', } --                      <- Lua library for a few lua plugins. used by Telescope and Diffview. 
 	use { 'nvim-telescope/telescope.nvim', } --              <- This can do alot, its just good as a method to find something, doesn't matter what, it just has to be now.
     use { 'nvim-telescope/telescope-file-browser.nvim',} --  <- a file manager extention for telescope as if it didn't do enough.
-    -- use { 'sindrets/diffview.nvim',                          
-           -- requires = 'nvim-lua/plenary.nvim' } --           <- for displaying diffs for git, mostly here for neogit
+    use { 'sindrets/diffview.nvim',                          
+           requires = 'nvim-lua/plenary.nvim' } --           <- for displaying diffs for git, mostly here for neogit
     use { 'TimUntersberger/neogit',
-           requires = 'nvim-lua/plenary.nvim',  --           <- magit but in emacs, can you notice the pattern here, I hate emacs but love its plugins
-      				  'sindrets/diffview.nvim'} 
+           requires = 'nvim-lua/plenary.nvim' } --           <- magit but in emacs, can you notice the pattern here, I hate emacs but love its plugins
     use { 'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate', } --                          <- EVEN MORE SYNTAX HIGHLIGHTING
     use { 'tpope/vim-commentary'} --                         <- THis just tells that I am too lazy to comment something out the old fashion way
@@ -428,9 +427,8 @@ require('telescope').setup {
     file_browser = {
       theme = "ivy",
       -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = false,
+      hijack_netrw = true,
       hidden = true,
-	  layout_strategies = 'horizontal',
       mappings = {
         ["i"] = {
           -- your custom insert mode mappings
@@ -456,7 +454,7 @@ neogit.setup {
   disable_signs = false,
   disable_hint = false,
   disable_context_highlighting = false,
-  disable_commit_confirmation = true,
+  disable_commit_confirmation = false,
   -- Neogit refreshes its internal state after specific events, which can be expensive depending on the repository size. 
   -- Disabling `auto_refresh` will make it so you have to manually refresh the status after you open it.
   auto_refresh = true,
@@ -492,18 +490,18 @@ neogit.setup {
     --   }
     -- }
     --
-    diffview = true 
+    diffview = false  
   },
   -- Setting any section to `false` will make the section not render at all
   sections = {
     untracked = {
-      folded = true
+      folded = false
     },
     unstaged = {
-      folded = true 
+      folded = false
     },
     staged = {
-      folded = true 
+      folded = false
     },
     stashes = {
       folded = true
@@ -512,7 +510,7 @@ neogit.setup {
       folded = true
     },
     unmerged = {
-      folded = true 
+      folded = false
     },
     recent = {
       folded = true

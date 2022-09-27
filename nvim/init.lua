@@ -64,7 +64,7 @@ cmd [[packadd packer.nvim]]
 	use { 'airblade/vim-gitgutter', } --                     <- A good indicator for whats new and what hasn't been commited yet.
 --  use { 'tpope/vim-fugitive',} --                          <- git intigration for vim inert until I stop using NeoGit
 	use { 'w0rp/ale', } --                                   <- Indicates where the issues in your code are with a red >> 
-    use { 'famiu/bufdelete.nvim'} --                         <- Says it helps retain the layout after a buffer is deleted but I haven't gotted aroud to using it
+   use { 'famiu/bufdelete.nvim'} --                         <- Says it helps retain the layout after a buffer is deleted but I haven't gotted aroud to using it
     use { 'ms-jpq/coq_nvim', branch = 'coq'} --              <- Code completion and code snippets, makes life just a little better when coding 
     use { 'ms-jpq/coq.artifacts', branch = 'artifacts' } --  <- The snippets that COQ uses 
     use { 'ms-jpq/coq.thirdparty', branch = '3p'} --         <- Third party snippets for COQ
@@ -428,8 +428,9 @@ require('telescope').setup {
     file_browser = {
       theme = "ivy",
       -- disables netrw and use telescope-file-browser in its place
-      hijack_netrw = true,
+      hijack_netrw = false,
       hidden = true,
+	  layout_strategies = 'horizontal',
       mappings = {
         ["i"] = {
           -- your custom insert mode mappings
@@ -455,7 +456,7 @@ neogit.setup {
   disable_signs = false,
   disable_hint = false,
   disable_context_highlighting = false,
-  disable_commit_confirmation = false,
+  disable_commit_confirmation = true,
   -- Neogit refreshes its internal state after specific events, which can be expensive depending on the repository size. 
   -- Disabling `auto_refresh` will make it so you have to manually refresh the status after you open it.
   auto_refresh = true,
@@ -496,13 +497,13 @@ neogit.setup {
   -- Setting any section to `false` will make the section not render at all
   sections = {
     untracked = {
-      folded = false
+      folded = true
     },
     unstaged = {
-      folded = false
+      folded = true 
     },
     staged = {
-      folded = false
+      folded = true 
     },
     stashes = {
       folded = true
@@ -511,7 +512,7 @@ neogit.setup {
       folded = true
     },
     unmerged = {
-      folded = false
+      folded = true 
     },
     recent = {
       folded = true

@@ -1,0 +1,398 @@
+servers = (
+  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
+  {
+    address = "ssl.efnet.org";
+    chatnet = "EFNet";
+    port = "9999";
+    use_tls = "yes";
+  },
+  {
+    address = "irc.esper.net";
+    chatnet = "EsperNet";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  {
+    address = "chat.freenode.net";
+    chatnet = "Freenode";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  {
+    address = "irc.gamesurge.net";
+    chatnet = "GameSurge";
+    port = "6667";
+  },
+  {
+    address = "eu.irc6.net";
+    chatnet = "IRCnet";
+    port = "6667";
+    use_tls = "yes";
+  },
+  { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
+  {
+    address = "irc.ircsource.net";
+    chatnet = "IRCSource";
+    port = "6667";
+  },
+  { address = "irc.netfuze.net"; chatnet = "NetFuze"; port = "6667"; },
+  {
+    address = "irc.oftc.net";
+    chatnet = "OFTC";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+    autoconnect = "yes";
+  },
+  { 
+    address = "irc.quakenet.org";
+    chatnet = "QuakeNet";
+    port = "6667";
+  },
+  {
+    address = "irc.rizon.net";
+    chatnet = "Rizon";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+  },
+  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
+  { 
+    address = "irc.undernet.org";
+    chatnet = "Undernet";
+    port = "6667";
+  },
+  {
+    address = "irc.myanonamouse.net";
+    chatnet = "Myanonamouse";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "irc.libera.chat";
+    chatnet = "LiberaChat";
+    port = "6667";
+    use_tls = "no";
+    tls_verify = "no";
+    autoconnect = "yes";
+  },
+  {
+    address = "irc.libera.chat";
+    chatnet = "LiberaChat";
+    port = "6697";
+    use_tls = "yes";
+    tls_verify = "yes";
+    autoconnect = "yes";
+  },
+  {
+    address = "irc.orpheus.network";
+    chatnet = "Orpheus";
+    port = "7000";
+    use_tls = "yes";
+    tls_verify = "yes";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  DALnet = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "20";
+    max_whois = "30";
+  };
+  EFNet = { 
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  EsperNet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  Freenode = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  GameSurge = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  IRCnet = { 
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  IRCSource = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+  };
+  NetFuze = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  OFTC = {
+    type = "IRC";
+    autosendcmd = "/msg nickserv identify (sGhkulI\"%ShcIv2=iP'Nj.RR OxFFF; wait 2000";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  QuakeNet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  Rizon = { 
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  SILC = { type = "SILC"; };
+  Undernet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "1";
+    max_whois = "1";
+  };
+  Myanonamouse = {
+    type = "IRC";
+    nick = "OxFFF";
+    autosendcmd = "/msg nickserv identify OxFFF Tb'PVJ?/r.fU&Y%-Zs~Md2}xy; wait 2000";
+  };
+  LiberaChat = {
+    type = "IRC";
+    sasl_mechanism = "PLAIN";
+    sasl_username = "Ox000";
+    sasl_password = "q{Cjx;1^>A&YO4-V(CuQD\"6Ol";
+    nick = "Ox000";
+  };
+  Orpheus = {
+    type = "IRC";
+    nick = "Ox000";
+    autosendcmd = "/msg nickserv IDENTIFY Ox000 Gur~i6{#F|+w.J#^tYLD8*V)L; wait 2000; /msg hermes enter #orpheus,#announce,#develop,#recruitment,#requests Ox000 9lB6PZ7JD61i9hWPUamRjWlL0DQG66GN";
+  };
+  fakenet = { type = "IRC"; nick = "0x000"; };
+};
+
+channels = (
+  { name = "#lobby"; chatnet = "EsperNet"; autojoin = "No"; },
+  { name = "#freenode"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#irssi"; chatnet = "Freenode"; autojoin = "No"; },
+  { name = "#gamesurge"; chatnet = "GameSurge"; autojoin = "No"; },
+  { name = "#irssi"; chatnet = "IRCNet"; autojoin = "No"; },
+  { name = "#ircsource"; chatnet = "IRCSource"; autojoin = "No"; },
+  { name = "#netfuze"; chatnet = "NetFuze"; autojoin = "No"; },
+  { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
+  { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
+  { name = "#am-members"; chatnet = "Myanonamouse"; autojoin = "yes"; },
+  {
+    name = "#anonamouse.net";
+    chatnet = "Myanonamouse";
+    autojoin = "yes";
+  },
+  { name = "#idlerpg"; chatnet = "Myanonamouse"; autojoin = "yes"; },
+  { name = "#irssi"; chatnet = "LiberaChat"; autojoin = "yes"; },
+  { name = "#neovim"; chatnet = "LiberaChat"; autojoin = "yes"; },
+  {
+    name = "#archlinux-offtopic";
+    chatnet = "LiberaChat";
+    autojoin = "yes";
+  },
+  { name = "#gnu"; chatnet = "LiberaChat"; autojoin = "yes"; },
+  { name = "#emacs"; chatnet = "LiberaChat"; autojoin = "yes"; },
+  { name = "#linux"; chatnet = "LiberaChat"; autojoin = "yes"; },
+  { name = "#suckless"; chatnet = "OFTC"; autojoin = "yes"; },
+  { name = "#cat-v"; chatnet = "OFTC"; autojoin = "yes"; },
+  { name = "#plan9"; chatnet = "LiberaChat"; autojoin = "yes"; },
+  { name = "#c"; chatnet = "LiberaChat"; autojoin = "yes"; },
+  { name = "#libera"; chatnet = "LiberaChat"; autojoin = "yes"; },
+  { name = "#matrix"; chatnet = "LiberaChat"; autojoin = "yes"; },
+  { name = "#announce"; chatnet = "Myanonamouse"; autojoin = "yes"; },
+  { name = "#help"; chatnet = "Myanonamouse"; autojoin = "yes"; },
+  { name = "#pirates"; chatnet = "Myanonamouse"; autojoin = "yes"; },
+  { name = "#trivia"; chatnet = "Myanonamouse"; autojoin = "yes"; },
+  { name = "#games"; chatnet = "Orpheus"; autojoin = "yes"; }
+);
+
+aliases = {
+  ATAG = "WINDOW SERVER";
+  ADDALLCHANS = "SCRIPT EXEC foreach my \\$channel (Irssi::channels()) { Irssi::command(\"CHANNEL ADD -auto \\$channel->{visible_name} \\$channel->{server}->{tag} \\$channel->{key}\")\\;}";
+  B = "BAN";
+  BACK = "AWAY";
+  BANS = "BAN";
+  BYE = "QUIT";
+  C = "CLEAR";
+  CALC = "EXEC - if command -v bc >/dev/null 2>&1\\; then printf '%s=' '$*'\\; echo '$*' | bc -l\\; else echo bc was not found\\; fi";
+  CHAT = "DCC CHAT";
+  DATE = "TIME";
+  DEHIGHLIGHT = "DEHILIGHT";
+  DESCRIBE = "ACTION";
+  DHL = "DEHILIGHT";
+  EXEMPTLIST = "MODE $C +e";
+  EXIT = "QUIT";
+  GOTO = "SCROLLBACK GOTO";
+  HIGHLIGHT = "HILIGHT";
+  HL = "HILIGHT";
+  HOST = "USERHOST";
+  INVITELIST = "MODE $C +I";
+  J = "JOIN";
+  K = "KICK";
+  KB = "KICKBAN";
+  KN = "KNOCKOUT";
+  LAST = "LASTLOG";
+  LEAVE = "PART";
+  M = "MSG";
+  MUB = "UNBAN *";
+  N = "NAMES";
+  NMSG = "^MSG";
+  P = "PART";
+  Q = "QUERY";
+  RESET = "SET -default";
+  RUN = "SCRIPT LOAD";
+  SAY = "MSG *";
+  SB = "SCROLLBACK";
+  SBAR = "STATUSBAR";
+  SIGNOFF = "QUIT";
+  SV = "MSG * Irssi $J ($V) - https://irssi.org";
+  T = "TOPIC";
+  UB = "UNBAN";
+  UMODE = "MODE $N";
+  UNSET = "SET -clear";
+  W = "WHO";
+  WC = "WINDOW CLOSE";
+  WG = "WINDOW GOTO";
+  WJOIN = "JOIN -window";
+  WI = "WHOIS";
+  WII = "WHOIS $0 $0";
+  WL = "WINDOW LIST";
+  WN = "WINDOW NEW HIDDEN";
+  WQUERY = "QUERY -window";
+  WW = "WHOWAS";
+};
+
+statusbar = {
+
+  items = {
+
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    topicbarstart = "{topicsbstart}";
+    topicbarend = "{topicsbend}";
+
+    time = "{sb $Z}";
+    user = "{sb {sbnickmode $cumode}$N{sbmode $usermode}{sbaway $A}}";
+
+    window = "{sb $winref:$tag/$itemname{sbmode $M}}";
+    window_empty = "{sb $winref{sbservertag $tag}}";
+
+    prompt = "{prompt $[.15]itemname}";
+    prompt_empty = "{prompt $winname}";
+
+    topic = " $topic";
+    topic_empty = " Irssi v$J - https://irssi.org";
+
+    lag = "{sb Lag: $0-}";
+    act = "{sb Act: $0-}";
+    more = "-- more --";
+  };
+
+  default = {
+
+    window = {
+
+      disabled = "no";
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "active";
+
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        act = { priority = "10"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    window_inact = {
+
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    prompt = {
+
+      type = "root";
+      placement = "bottom";
+      position = "100";
+      visible = "always";
+
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        input = { priority = "10"; };
+      };
+    };
+
+    topic = {
+
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+
+      items = {
+        topicbarstart = { priority = "100"; };
+        topic = { };
+        topic_empty = { };
+        topicbarend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+settings = {
+  core = { real_name = "Unknown"; user_name = "jy"; nick = "OxFFF"; };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "perl/core/scripts" = { awl_shared_sbar = "OFF"; awl_mouse = "yes"; };
+  "irc/core" = { alternate_nick = "Ox000"; };
+  "fe-common/core" = { autolog = "yes"; };
+};
+logs = { };
+keyboard = ( 
+  { key = "meta-[M"; id = "command"; data = "mouse_xterm"; }
+);

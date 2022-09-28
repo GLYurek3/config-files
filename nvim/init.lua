@@ -78,15 +78,19 @@ cmd [[packadd packer.nvim]]
     use { 'TimUntersberger/neogit', -- 						 <- magit but in emacs, can you notice the pattern here, I hate emacs but love its plugins
            requires = 'nvim-lua/plenary.nvim', --			 <- dependency for a few lua plugins
 		   			  'sindrets/diffview.nvim' } --          <- for better viewing of git diffs 
+	use { 'nvim-neorg/neorg', 
+			tag = '0.0.12',
+			requires = 'nvim-lua/plenary.nvim',
+			}
+			 -- run = ":Neorg sync-parsers",}
     use { 'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate', } --                          <- EVEN MORE SYNTAX HIGHLIGHTING
     use { 'tpope/vim-commentary'} --                         <- THis just tells that I am too lazy to comment something out the old fashion way
-	use { 'lewis6991/impatient.nvim',} --                    <- Wake up Mr. :"Torvalds, We have a city to Code    } --                        
+	use { 'lewis6991/impatient.nvim' }--         		     <- Wake up Mr. :"Torvalds, We have a city to Code    } --                        
 	use { 'dstein64/vim-startuptime' } --					 <- See what slowed NeoVim down
 	use { 'akinsho/toggleterm.nvim', 
 			tag = '*'}
 	use { 'ghassan0/telescope-glyph.nvim' } --				 <- this is so cool
-
 -- diable redundant or unnecessary builtin plugins`
 local disabled_built_ins = {
     "netrw",
@@ -114,7 +118,7 @@ for _, plugin in pairs(disabled_built_ins) do
 end
 
 end)
-require('impatient') -- to make sure that this acctually does its job
+require('impatient')
 --}}}
 
 -- Vim options + global varibles (lua){{{ 
@@ -148,7 +152,9 @@ opt.compatible = false
 -- local colorscheme = "gruvbox"
 --vim.opt.leader = 
 --vim.opt.cursorcolumn = true
-
+g.vimwiki_hl_headers = 1
+g.vimwiki_hl_cb_checked = 1
+g.vimwiki_autowriteall = 1
 g.loaded_perl_provider = 0 -- I don't program in perl
 g.loaded_python3_provider = 0 -- I hate python 
 g.NERDTreeShowHidden = 1 
@@ -347,7 +353,7 @@ g.startify_custom_header = {
 -- Nvim-TreeSitter Config (lua){{{
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "cpp", "lua", "rust", "fish", "make", "latex"},
+  ensure_installed = { "c", "cpp", "lua", "rust", "fish", "make", "latex", "org"},
 
   -- ensure_installed = { "c", "cpp", "lua", "rust", "fish", "bash", "html", "make", "css", "latex", "vim", },
   -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -771,3 +777,29 @@ require("diffview").setup({
  }
 
 	-- }}}
+
+-- Neorg Config(FUCK NEORG's DEVELOPERS)(lua){{{
+-- this took a abhorrent amount of time to just to get to even get working.
+-- The first time it even started I fell out of my chair in shock that it even worked 
+-- You see the devs and the users either don't use treesitter or use nightly builds of nvim 
+-- (tldr; they are fucking psychos). In addition they also just don't care about stability 
+-- and reproducability accross different configs. Thats fine by me but atleast make it obvious
+-- that It will have issues if in is not pegged to version 0.0.12( which is 3 tags beghind btw)
+-- So out of just spite and rage I refused to give up like the ass I am. A note on the nightly builds
+-- WHY, that just seems hell. at that point I would litteraly just clone the git repo for neovim and
+-- just recompile it every night using the perscribed build options that are normaly used for arch
+-- packages
+require('neorg').setup {
+    load = {
+        ["core.defaults"] = {},
+        ["core.norg.dirman"] = {
+            config = {
+                workspaces = {
+                    work = "~/notes/work",
+                    home = "~/notes/home",
+                }
+            }
+        }
+    }
+}
+-- }}}

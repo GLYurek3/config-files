@@ -75,10 +75,9 @@ cmd [[packadd packer.nvim]]
     use { 'nvim-lua/plenary.nvim', } --                      <- Lua library for a few lua plugins. used by Telescope and Diffview. 
 	use { 'nvim-telescope/telescope.nvim', } --              <- This can do alot, its just good as a method to find something, doesn't matter what, it just has to be now.
     use { 'nvim-telescope/telescope-file-browser.nvim',} --  <- a file manager extention for telescope as if it didn't do enough.
-    use { 'sindrets/diffview.nvim',                          
-           requires = 'nvim-lua/plenary.nvim' } --           <- for displaying diffs for git, mostly here for neogit
-    use { 'TimUntersberger/neogit',
-           requires = 'nvim-lua/plenary.nvim' } --           <- magit but in emacs, can you notice the pattern here, I hate emacs but love its plugins
+    use { 'TimUntersberger/neogit', -- 						 <- magit but in emacs, can you notice the pattern here, I hate emacs but love its plugins
+           requires = 'nvim-lua/plenary.nvim', --			 <- dependency for a few lua plugins
+		   			  'sindrets/diffview.nvim' } --          <- for better viewing of git diffs 
     use { 'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate', } --                          <- EVEN MORE SYNTAX HIGHLIGHTING
     use { 'tpope/vim-commentary'} --                         <- THis just tells that I am too lazy to comment something out the old fashion way

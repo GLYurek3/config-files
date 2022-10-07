@@ -119,11 +119,6 @@ _G.packer_plugins = {
     path = "/home/jy/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
   },
-  neorg = {
-    loaded = true,
-    path = "/home/jy/.local/share/nvim/site/pack/packer/start/neorg",
-    url = "https://github.com/nvim-neorg/neorg"
-  },
   nerdtree = {
     loaded = true,
     path = "/home/jy/.local/share/nvim/site/pack/packer/start/nerdtree",

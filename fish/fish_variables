@@ -35,7 +35,7 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/jy/\x2eemacs\x2ed/bin\x1e/home/jy/git/pokete\x1e/home/jy/\x2elocal/bin\x1e/home/jy/\x2ecargo/bin
+SETUVAR fish_user_paths:/home/jy/\x2econfig/doom\x2demacs/bin\x1e/home/jy/\x2econfig/doom\x2demacs\x1e/home/jy/\x2eemacs\x2ed/bin\x1e/home/jy/git/pokete\x1e/home/jy/\x2elocal/bin\x1e/home/jy/\x2ecargo/bin
 SETUVAR font:Monofur
 SETUVAR g_lang_en:A\x20fancy\x20theme\x20for\x20the\x20\x20shell\x2e\x5cnType\x20\x20for\x20a\x20complete\x20documentation\x2e
 SETUVAR g_lang_sp:Un\x20tema\x20elegante\x20para\x20el\x20shell\x20\x2e\x5cnEscriba\x20\x20para\x20una\x20documentaci\u00f3n\x20detallada\x2e

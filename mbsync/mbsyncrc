@@ -1,0 +1,254 @@
+########################################
+# gmail.com/mailing list email
+########################################
+# This email is for observing and subsribing to mailing lists only
+# no regular use for anything else, PERIOD. Don't you fucking dare idiot
+IMAPAccount gmail
+Host imap.gmail.com
+User gly3mb@gmail.com
+PassCmd "pass gly3mbapppass | head -n1"
+Port 993
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+# CertificateFile /usr/local/etc/openssl/cert.pem  # MacOS
+
+##
+# Remote
+IMAPStore gmail-remote
+Account gmail
+
+# Local
+MaildirStore gmail-local
+Path ~/Mail/gmail.com/
+Inbox ~/Mail/gmail.com/Inbox
+
+## Connections
+Channel gmail-all
+Far :gmail-remote:"[Gmail]/All Mail"
+Near :gmail-local:"All Mail"
+Create Near
+Expunge Both
+SyncState *
+
+Channel gmail-inbox
+Far :gmail-remote:"INBOX"
+Near :gmail-local:"Inbox"
+Create Near
+Expunge Both
+SyncState *
+
+Channel gmail-drafts
+Far :gmail-remote:"[Gmail]/Drafts"
+Near :gmail-local:"Drafts"
+Create Near
+Expunge Both
+SyncState *
+
+Channel gmail-sent
+Far :gmail-remote:"[Gmail]/Sent Mail"
+Near :gmail-local:"Sent Mail"
+Create Near
+Expunge Both
+SyncState *
+
+Channel gmail-trash
+Far :gmail-remote:"[Gmail]/Trash"
+Near :gmail-local:"Trash"
+Create Near
+Expunge Both
+SyncState *
+
+Channel kernel
+Far :gmail-remote:"Kernel"
+Near :gmail-local:"Kernel"
+Create Near
+Expunge Both
+SyncState *
+
+Channel kernel-newbies
+Far :gmail-remote:"Kernel Newbies"
+Near :gmail-local:"Kernel Newbies"
+Create Near
+Expunge Both
+SyncState *
+
+Channel emacs
+Far :gmail-remote:"Emacs"
+Near :gmail-local:"Emacs"
+Create Near
+Expunge Both
+SyncState *
+
+Channel arch
+Far :gmail-remote:"Arch"
+Near :gmail-local:"Arch"
+Create Near
+Expunge Both
+SyncState *
+
+Channel arch-commits
+Far :gmail-remote:"Arch Commits"
+Near :gmail-local:"Arch Commits"
+Create Near
+Expunge Both
+SyncState *
+
+Channel gentoo-dev
+Far :gmail-remote:"Gentoo Dev"
+Near :gmail-local:"Gentoo Dev"
+Create Near
+Expunge Both
+SyncState *
+
+
+Channel tldr
+Far :gmail-remote:"TLDR"
+Near :gmail-local:"TLDR"
+Create Near
+Expunge Both
+SyncState *
+
+## Groups
+Group gmail
+Channel gmail-all
+Channel gmail-inbox
+Channel gmail-drafts
+Channel gmail-sent
+Channel gmail-trash
+Channel kernel
+Channel kernel-newbies
+Channel emacs
+Channel arch
+Channel arch-commits
+Channel gentoo-dev
+Channel tldr
+
+
+# ########################################
+# # yurek.me
+# ########################################
+IMAPAccount yurek
+Host outlook.office365.com
+User g3@yurek.me
+PassCmd "pass g3@yurek.me | head -n1"
+Port 993
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+# CertificateFile /usr/local/etc/openssl/cert.pem  # MacOS
+Timeout 120
+PipelineDepth 50
+
+IMAPStore yurek-remote
+Account yurek
+
+MaildirStore yurek-local
+Path ~/Mail/yurek.me/
+Inbox ~/Mail/yurek.me/Inbox
+SubFolders Verbatim
+
+## Connections
+# Channel yurek-all
+# Master :yurek-remote:"[Gmail]/All Mail"
+# Slave :-local:"All Mail"
+# Create Slave
+# Expunge Both
+# SyncState *
+
+Channel yurek-inbox
+Far :yurek-remote:"INBOX"
+Near :yurek-local:"Inbox"
+Create Near
+Expunge Both
+SyncState *
+
+Channel yurek-drafts
+Far :yurek-remote:"Drafts"
+Near :yurek-local:"Drafts"
+Create Near
+Expunge Both
+SyncState *
+
+Channel yurek-sent
+Far :yurek-remote:"Sent Items"
+Near :yurek-local:"Sent Mail"
+Create Near
+Expunge Both
+SyncState *
+
+Channel yurek-trash
+Far :yurek-remote:"Deleted Items"
+Near :yurek-local:"Trash"
+Create Near
+Expunge Both
+SyncState *
+
+# ## Groups
+Group yurek
+Channel yurek-inbox
+Channel yurek-drafts
+Channel yurek-sent
+Channel yurek-trash
+# Footer
+
+# # ########################################
+# # # ohio.edu
+# # ########################################
+# # most enterprise exhange servers just won't work with imap or smtp period
+# # Its a miracle that the outlook based yurek.me email even works
+# IMAPAccount uni
+# Host outlook.office365.com
+# User jy605421@ohio.edu
+# Pass "3344ZeldaCole"
+# Port 993
+# AuthMechs PLAIL 
+# SSLType IMAPS
+# CertificateFile /etc/ssl/certs/ca-certificates.crt
+# # CertificateFile /usr/local/etc/openssl/cert.pem  # MacOS
+# Timeout 120
+# PipelineDepth 50
+
+# IMAPStore uni-remote
+# Account uni
+
+# MaildirStore uni-local
+# Path ~/.mail/ohio.edu/
+# Inbox ~/.mail/ohio.edu/Inbox
+# SubFolders Verbatim
+
+# Channel uni-inbox
+# Far :uni-remote:"INBOX"
+# Near :uni-local:"Inbox"
+# Create Near
+# Expunge Both
+# SyncState *
+
+# Channel uni-drafts
+# Far :uni-remote:"Drafts"
+# Near :uni-local:"Drafts"
+# Create Near
+# Expunge Both
+# SyncState *
+
+# Channel uni-sent
+# Far :uni-remote:"Sent Items"
+# Near :uni-local:"Sent Mail"
+# Create Near
+# Expunge Both
+# SyncState *
+
+# Channel uni-trash
+# Far :uni-remote:"Deleted Items"
+# Near :uni-local:"Trash"
+# Create Near
+# Expunge Both
+# SyncState *
+
+# # ## Groups
+# Group uni
+# Channel uni-inbox
+# Channel uni-drafts
+# Channel uni-sent
+# Channel uni-trash
+# # Footer

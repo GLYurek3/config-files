@@ -1,0 +1,61 @@
+{
+    "packages": [
+        {
+            "current_version": "3.0",
+            "install_timestamp": 1666317014,
+            "package": {
+                "author": {
+                    "contact": {
+                        "email": "dawid_cislo@o2.pl"
+                    },
+                    "name": "Dawid Cisło"
+                },
+                "description": "Symbol and Footprint library focused on improving schematic and PCB readability and aesthetics, mainly intended for hobbyist use",
+                "description_full": "Current version: 3.0\n\nYou need to manually update the library tables in the Library Manager. Refer to the links below for documentation and installation instructions.\n\nAlternate KiCad Library contains over 30000 symbols and 9200 footprints.\n New symbols include opamps, voltage comparators, instrumentation amplifiers, difference amplifiers, differential amplifiers and more.\nNew footprints include Potentiometers, SIP packages and new variants for existing libraries.\n\n",
+                "identifier": "com.github.dawidcislo.alternate-kicad-library",
+                "license": "CC-BY-SA",
+                "name": "Alternate Kicad Library",
+                "resources": {
+                    "Github": "https://github.com/DawidCislo/Alternate-KiCad-Library",
+                    "Website": "https://www.alternatekicadlibrary.com/"
+                },
+                "tags": [
+                    "footprints",
+                    "symbols"
+                ],
+                "type": "library",
+                "versions": [
+                    {
+                        "download_sha256": "55da0f126d556400a0511b75fc1543f91e5a4de1645cafbf057c307cb51a9e46",
+                        "download_size": 24209427,
+                        "download_url": "https://github.com/DawidCislo/Alternate-KiCad-Library/releases/download/v3.0/com_github_alternate_kicad_library.zip",
+                        "install_size": 107680556,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "3.0"
+                    },
+                    {
+                        "download_sha256": "dc07a18ece7a8df203229999b13efe2f0f8e15abf1b07ea507deefe760d5de8b",
+                        "download_size": 15031216,
+                        "download_url": "https://github.com/DawidCislo/Alternate-KiCad-Library/releases/download/v2.1/com_github_alternate_kicad_library.zip",
+                        "install_size": 67073607,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "2.1"
+                    },
+                    {
+                        "download_sha256": "9263e7d394912f06baa1d33180e59bf10a75086ad683abf31d65581c8f2f16e2",
+                        "download_size": 10872186,
+                        "download_url": "https://github.com/DawidCislo/Alternate-KiCad-Library/raw/main/PCM_Releases/2.0/com_github_alternate_kicad_library.zip",
+                        "install_size": 59137804,
+                        "kicad_version": "6.0",
+                        "status": "stable",
+                        "version": "2.0"
+                    }
+                ]
+            },
+            "repository_id": "46f88614eade3439",
+            "repository_name": "KiCad official repository"
+        }
+    ]
+}

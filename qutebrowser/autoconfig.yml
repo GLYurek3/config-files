@@ -57,7 +57,7 @@ settings:
   fonts.default_family:
     global: FiraCode Retina
   fonts.default_size:
-    global: 10pt
+    global: 15pt
   input.insert_mode.plugins:
     global: true
   qt.force_software_rendering:
@@ -76,4 +76,4 @@ settings:
   url.start_pages:
     global: https://search.brave.com/
   zoom.default:
-    global: 100%
+    global: 150%

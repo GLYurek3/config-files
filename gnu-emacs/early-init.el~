@@ -1,0 +1,36 @@
+;;; early-init.el --- Description -*- lexical-binding: t; -*-
+;;
+;; Copyright (C) 2022 Gerald Lee Yurek III
+;;
+;; Author: Gerald Lee Yurek III <g3@yurek.me>
+;; Maintainer: Gerald Lee Yurek III <g3@yurek.me>
+;; Created: October 21, 2022
+;; Modified: October 21, 2022
+;; Version: 0.0.1
+;; Keywords: abbrev bib c calendar comm convenience data docs emulations extensions faces files frames games hardware help hypermedia i18n internal languages lisp local maint mail matching mouse multimedia news outlines processes terminals tex tools unix vc wp
+;; Homepage: https://github.com/jy/early-init
+;; Package-Requires: ((emacs "24.3"))
+;;
+;; This file is not part of GNU Emacs.
+;;
+;;; Commentary:
+;;
+;;  Description
+;;
+;;; Code:
+(setq tool-bar-mode nil
+      menu-bar-mode nil
+      scroll-bar-mode nil)
+(modify-all-frames-parameters '((vertical-scroll-bars)))
+
+(setq custom-file (locate-user-emacs-file "custom-vars.el"))
+(load custom-file 'noerror 'nomessage)
+(setq use-dialog-box nil)
+;;; early-init.el ends here
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)
+
+(set-face-attribute 'default nil :font "Fira Code Retina" :height 150)
+(setq-default tab-width 4
+              tab-always-indent 'complete
+              indent-tabs-mode t)

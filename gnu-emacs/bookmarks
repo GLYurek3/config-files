@@ -1,0 +1,25 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("DooM EMAC Config"
+ (filename . "~/.config/doom/")
+ (front-context-string . "confback\n  -rw-r")
+ (rear-context-string . "88 Oct 14 15:42 ")
+ (position . 202))
+("Vanilla EMACS Config"
+ (filename . "~/.config/gnu-emacs/")
+ (front-context-string . "banner.txt\n  -rw")
+ (rear-context-string . "47 Oct 21 00:39 ")
+ (position . 207))
+("Fish Config"
+ (filename . "~/.config/fish/config.fish")
+ (front-context-string . "\n    function fi")
+ (rear-context-string . "ons can go here\n")
+ (position . 84))
+("Config Home"
+ (filename . "~/.config/")
+ (front-context-string . "bat\n  drwxr-xr-x")
+ (rear-context-string . "88 Sep 27 18:41 ")
+ (position . 195))
+)
